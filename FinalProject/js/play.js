@@ -1,5 +1,10 @@
-(function(){
+/* Shiyu Cheng (23329948), Jiaxu Kang (23373848)
+* This is the final project of CSC 337, SP. 2019
+* 04/24/2019
+* */
 
+"use strict";
+(function(){
     window.onload = function () {
 
         let clickedArray = [];
@@ -11,36 +16,33 @@
             shuffleImg();
         };
 
-        let leftTime = 115;
+        let leftTime = 115; //total time
         setInterval(function () {
-
             timeIntervalHandler(leftTime);
-            leftTime --;
-            if (leftTime <= 0){
+            leftTime --; //time decreasing
+            if (leftTime <= 0){ //when time ends, the game over appear up
                 clearInterval();
                 console.log("game over");
                 let lose = document.getElementById("lose");
                 let container = document.getElementById("container");
                 container.style.display = "none";
                 lose.style.display = "block";
-
             }
         }, 1000);
 
     };
 
     let timeIntervalHandler = function(leftTime){
-
+        // decreasing the width of the process bar
         let progress = document.getElementById("process");
         progress.style.width = leftTime +"px";
     };
 
     let shuffleImg = function(){
-
         let leftCols = [];
         let leftImgs = [];
         let rows = document.getElementById("container");
-
+        //loop the container
         for(let i = 2; i<rows.childNodes.length-1; i++){
             let cols = rows.childNodes[i];
             for(let j = 1; j< cols.childNodes.length-1; j++){
@@ -59,6 +61,7 @@
     };
 
     let checkFinish = function(){
+        //this function is for checking if all images are linked
       let rows = document.getElementById("container");
         console.log(rows.childNodes);
       for(let i = 2; i<rows.childNodes.length-1; i++){
@@ -108,7 +111,7 @@
         for(let i = 0; i < rows+2; i++){
             let row = document.createElement("div");
             row.className = "row "+i;
-
+            //set border cells
             for(let j = 0; j < cols+2; j++){
                 let col = document.createElement("div");
                 col.className = "col "+i+"_"+j+" border";
@@ -122,7 +125,6 @@
                 let col = document.getElementsByClassName(i+"_"+j)[0];
                 col.className = "col "+i+"_"+j;
                setImage(col, imgArray);
-               // row.appendChild(col);
                 col.addEventListener("click", function () {
                     clickHandler(col, clickedArray);
                 });
@@ -155,11 +157,9 @@
                     col.style.borderColor = "pink";
                     col.style.boxShadow = "5px 8px 8px red";
                     clickedArray.push(col);
-
                 }else{
                     //judge cols with the same image!
                     clickedArray = conditions(clickedArray, col);
-
                 }
 
             }else {
@@ -180,8 +180,6 @@
 
     let conditions = function (array, p2) {
         let p1 = array[0];
-        let grid = document.getElementById("container");
-
         //check none_corner condition
         let checkNoneCorner = noneCorner(p1, p2);
         if (checkNoneCorner === true){
@@ -246,9 +244,7 @@
         console.log("searching horizontal right direction: false");
 
         // searching horizontal left direction
-
         console.log("searching horizontal left direction....");
-        //for(let i =1; i< p1_x+1; i++){
         for(let i = p1_y-1 ; i >= 0; i--){
             let row = document.getElementsByClassName("row "+p1_x)[0];
             let p3 = row.childNodes[i];
@@ -333,7 +329,6 @@
                 return true;
             }
         }
-
         console.log("oneCorner false");
         return false;
     };
@@ -401,10 +396,8 @@
                 }
             }
         }
-
         console.log("NoneCorner: true");
         return true;
-
     };
 
     let getCoordinate = function(element){
@@ -415,6 +408,5 @@
             getY: parseInt(coordinateString[1])
         }
     }
-
 
 })();
