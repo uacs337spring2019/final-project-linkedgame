@@ -1,9 +1,14 @@
+/* Shiyu Cheng (23329948), Jiaxu Kang (23373848)
+* This is the final project of CSC 337, SP. 2019
+* 04/24/2019
+* */
+
 (function(){
 	"use strict";
 window.onload = function() {
 	document.getElementById("login").onclick = log_in;
 	document.getElementById("sign_up").onclick = sign_up;
-}
+};
 function log_in(){
 	document.getElementById("confirm").innerHTML = "";
 	document.getElementById("wrong").innerHTML = "";
