@@ -1,0 +1,80 @@
+body{
+    color: white;
+    background-image: url("../images/universe.jpg");
+
+}
+
+header{
+    text-align: center;
+    margin-bottom: 60px;
+}
+#panel {
+    width: 840px;
+    height: 600px;
+    margin: auto;
+    border: solid 1px white;
+    background-image: url("../images/game-bg.png");
+
+}
+
+#tool{
+    position: absolute;
+    margin-left: 20px;
+
+}
+
+#time{
+    position: absolute;
+    z-index: 1;
+    margin: 15px 20px 20px 140px;
+}
+
+#process{
+    background-image: url("../images/time-progress.png");
+    z-index: 10;
+    margin: 9px 10px 10px 7px;
+    height: 21px;
+    width: 115px;
+    position: absolute;
+}
+
+#container{
+    margin-top: 20px;
+
+}
+#container .border{
+    background-color: transparent;
+    border: solid 1px transparent !important;
+
+}
+
+
+#container .col img{
+    background-color: #5957ff;
+}
+
+
+#container .col{
+    width: 48px;
+    height: 48px;
+    float: left;
+    border: solid 1px white;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#win, #lose{
+    margin-top: 120px !important;
+    text-align: center;
+    font-size: 3em;
+    color: #c7fbee;
+
+}
+
+#win{
+    display: none;
+}
+
+#lose{
+    display: none;
+}

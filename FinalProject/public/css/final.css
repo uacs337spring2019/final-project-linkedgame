@@ -1,0 +1,21 @@
+#log{
+	float: left;
+	margin-left: 100px;
+	margin-top: 200px;
+}
+
+#heads{
+	float: left;
+}
+
+body{
+	background:url("../images/universe.jpg");
+}
+
+img{
+	height: 590px;
+}
+
+p{
+	color: white;
+}
