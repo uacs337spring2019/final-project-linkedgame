@@ -1,7 +1,7 @@
 {
-"name": "linkGame Project",
+"name": "final_service.js Node Service File",
 "description": "337 final linkGame project",
-"repository": "https://github.com/uacs337spring2019/final-project-linkedgame/tree/master/FinalProject",
+"repository": "https://github.com/uacs337spring2019/final-project-linkedgame/FinalProject.git",
 "logo": "",
 "keywords": ["node", "express", "static"]
 }
