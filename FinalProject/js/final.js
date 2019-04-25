@@ -38,7 +38,7 @@ function log_in(){
 	};	
 
 
-	var url = "https://linkgame1.herokuapp.com/?log=no";
+	var url = "https://linkgame1.herokuapp.com?log=no";
 	fetch(url,fetchOptions)
 		.then(checkStatus)
 		.then(function(responseText){
@@ -48,7 +48,7 @@ function log_in(){
 
 			}else{
       
-		      	var url = "https://linkgame1.herokuapp.com/?login=no&name="+name;
+		      	var url = "https://linkgame1.herokuapp.com?login=no&name="+name;
 		        fetch(url)
 		        .then(checkStatus)
 		        .then(function(responseText){
@@ -94,7 +94,7 @@ function sign_up(){
 		body : JSON.stringify(message)
 	};	
 
-	var url = "https://linkgame1.herokuapp.com/?log=no";
+	var url = "https://linkgame1.herokuapp.com?log=no";
 	fetch(url,fetchOptions)
 		.then(checkStatus)
 		.then(function(responseText){
