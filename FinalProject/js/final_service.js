@@ -1,3 +1,11 @@
+/* Shiyu Cheng (23329948), Jiaxu Kang (23373848)
+* This is the final project of CSC 337, SP. 2019
+* 
+* Purpose: this is service of login system.
+* Tips: please use comment "npm install client-sessions" before read service.
+*
+* 04/24/2019
+* */
 const express = require("express");
 const fs = require("fs");
 const app = express();
@@ -10,6 +18,7 @@ app.use(session({
   duration: 30 * 60 * 1000,
   activeDuration: 5 * 60 * 1000,
 }));
+//read file.
 function read_file(file_name) {
   var text = 0;
   try {  
@@ -30,6 +39,8 @@ app.use(function(req, res, next) {
 
 const bodyParser = require("body-parser");
 const jsonParser = bodyParser.json();
+
+//sent json to user.
 app.get('/', function (req, res) {
 res.header("Access-Control-Allow-Origin", "*");
 if (req.query.login == "can") {
@@ -45,6 +56,8 @@ if(req.query.login == "no" && req.query.name != "None"){
 
 }  
 });
+
+//get name and passord, save it to the txt.
 app.post('/', jsonParser, function (req, res) {
   var name_infile = 0;
   if (req.query.log = "no"){
@@ -70,7 +83,6 @@ app.post('/', jsonParser, function (req, res) {
           console.log(err);
           res.status(400);
           }
-          console.log("user");
           });
           res.send("account created successfully!");
         } else {
